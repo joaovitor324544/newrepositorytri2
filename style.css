@@ -53,3 +53,17 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
+.parametro{
+    background-color: var(--fundo-texto);
+    border: 2px dotted var(--borda);
+    margin-top: 32px;
+    padding: 24px;
+}
+.parametro-senha_titulo{
+    font-size: 24px;
+}
+.parametro-coluna_senha{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
