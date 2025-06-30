@@ -111,15 +111,4 @@ body {
     position: relative;
     bottom: 30px;
 }
-.fraca{
-    width: 25%;
-    background-color: #E71B32; 
-}
-.media{
-    background-color: #FAF408;
-    width: 50%;
-}
-.forte{
-    background-color: #00FF85;
-    width: 100%;
-}
+
