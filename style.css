@@ -83,6 +83,7 @@ body {
     background-color: var(--fundo-senha);
     height: 30px;
     width: 100%;
+    
 }
 
 .forca {
@@ -106,7 +107,7 @@ body {
     width: 100%;
 }
 
-.parametro-senha-textos {
+.parametro-senha__textos {
     display: flex;
     justify-content: space-between;
 }
