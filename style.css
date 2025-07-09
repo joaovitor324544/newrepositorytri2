@@ -131,20 +131,20 @@ label {
 
 .fraca {
     width: 25%;
-    background-color: #E71B32;
+    background-color: #e71b32;
 }
 
 .media {
-    background-color: #FAF408;
+    background-color: #faf408;
     width: 50%;
 }
 
 .forte {
-    background-color: #00FF85;
+    background-color: #00ff85;
     width: 100%;
 }
 
-.parametro-senha__textos {
+.parametro-senha-textos {
     display: flex;
     justify-content: space-between;
 }
