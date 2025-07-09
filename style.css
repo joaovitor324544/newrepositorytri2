@@ -98,7 +98,7 @@ body {
     cursor: pointer;
 }
 
-.parametro-senha__textos {
+.parametro-senha-textos {
     padding: 24px;
     border-top: 2px solid var(--borda);
     border-bottom: 2px solid var(--borda);
