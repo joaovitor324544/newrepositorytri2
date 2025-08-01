@@ -1,4 +1,4 @@
-const numeroSenha = document.querySelector('.parametro-senha-texto');
+const numeroSenha = document.querySelector('.parametro-senha__textos');
 let tamanhoSenha = 12;
 numeroSenha.textContent = tamanhoSenha;
  
