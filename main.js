@@ -1,3 +1,4 @@
+// Seletores dos botões + e -
 const numeroSenha = document.querySelector('.parametro-senha__texto');
 let tamanhoSenha = 12;
 numeroSenha.textContent = tamanhoSenha;
@@ -21,23 +22,27 @@ botaoMais.addEventListener('click', () => {
     }
 });
 
-const checkboxes = document.querySelectorAll('.checkbox');
-checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', atualizarForca);
-});
+// Seletores de checkboxes (usando ID corretamente agora)
+const checkMaiusculo = document.getElementById('maiusculo');
+const checkMinusculo = document.getElementById('minusculo');
+const checkNumero = document.getElementById('numero');
+const checkSimbolo = document.getElementById('simbolo');
 
+// Atualiza força da senha
 function atualizarForca() {
     const forcaBarra = document.querySelector('.forca');
 
-    // Contar quantos critérios estão marcados
+    // Resetar classes
+    forcaBarra.className = 'forca';
+
+    // Contar critérios ativos
     let criterios = 0;
-    checkboxes.forEach(c => {
-        if (c.checked) criterios++;
-    });
+    if (checkMaiusculo.checked) criterios++;
+    if (checkMinusculo.checked) criterios++;
+    if (checkNumero.checked) criterios++;
+    if (checkSimbolo.checked) criterios++;
 
-    // Baseado no número de critérios e tamanho, atualizar classe da barra
-    forcaBarra.className = 'forca'; // Resetar classe
-
+    // Definir força com base em critérios + comprimento
     if (criterios <= 1 || tamanhoSenha <= 6) {
         forcaBarra.classList.add('fraca');
         forcaBarra.style.width = '25%';
@@ -50,19 +55,10 @@ function atualizarForca() {
     }
 }
 
-// Executar ao carregar
+// Atualizar ao carregar a página
 atualizarForca();
 
-// Seletores
-const campoSenha = document.getElementById('campo_senha');
-const botaoGerar = document.getElementById('botao_gerar');
-
-const checkMaiusculo = document.getElementById('maiusculo');
-const checkMinusculo = document.getElementById('minusculo');
-const checkNumero = document.getElementById('numero');
-const checkSimbolo = document.getElementById('simbolo');
-
-// Gerador de caracteres
+// Gerador de senha
 function gerarSenha(tamanho, usarMaiusculas, usarMinusculas, usarNumeros, usarSimbolos) {
     const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const letrasMinusculas = 'abcdefghijklmnopqrstuvwxyz';
@@ -86,7 +82,10 @@ function gerarSenha(tamanho, usarMaiusculas, usarMinusculas, usarNumeros, usarSi
     return senha;
 }
 
-// Ação do botão
+// Gerar senha ao clicar
+const campoSenha = document.getElementById('campo_senha');
+const botaoGerar = document.getElementById('botao_gerar');
+
 botaoGerar.addEventListener('click', () => {
     const senhaGerada = gerarSenha(
         tamanhoSenha,

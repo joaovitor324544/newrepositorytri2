@@ -120,16 +120,30 @@ label {
 }
 
 .barra {
-    background-color: #ccc;
+    background-color:#720455;
     height: 30px;
     width: 100%;
-    position: relative;
+    margin-bottom: 8px;
 }
 
 .forca {
     height: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 0.3s ease-in-out;
+    position: relative;
+    bottom: 30px;
+    transition: width 0.3s ease;
+}
+
+.fraca {
+    width: 25%;
+    background-color: #e71b32;
+}
+
+.media {
+    width: 50%;
+    background-color: #faf408;
+}
+
+.forte {
+    width: 100%;
+    background-color: #00ff85;
 }
