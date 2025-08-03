@@ -52,3 +52,50 @@ function atualizarForca() {
 
 // Executar ao carregar
 atualizarForca();
+
+// Seletores
+const campoSenha = document.getElementById('campo_senha');
+const botaoGerar = document.getElementById('botao_gerar');
+
+const checkMaiusculo = document.getElementById('maiusculo');
+const checkMinusculo = document.getElementById('minusculo');
+const checkNumero = document.getElementById('numero');
+const checkSimbolo = document.getElementById('simbolo');
+
+// Gerador de caracteres
+function gerarSenha(tamanho, usarMaiusculas, usarMinusculas, usarNumeros, usarSimbolos) {
+    const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const letrasMinusculas = 'abcdefghijklmnopqrstuvwxyz';
+    const numeros = '0123456789';
+    const simbolos = '!@#$%&*()-_=+{}[]<>?/';
+
+    let caracteres = '';
+    if (usarMaiusculas) caracteres += letrasMaiusculas;
+    if (usarMinusculas) caracteres += letrasMinusculas;
+    if (usarNumeros) caracteres += numeros;
+    if (usarSimbolos) caracteres += simbolos;
+
+    if (caracteres.length === 0) return '';
+
+    let senha = '';
+    for (let i = 0; i < tamanho; i++) {
+        const index = Math.floor(Math.random() * caracteres.length);
+        senha += caracteres.charAt(index);
+    }
+
+    return senha;
+}
+
+// Ação do botão
+botaoGerar.addEventListener('click', () => {
+    const senhaGerada = gerarSenha(
+        tamanhoSenha,
+        checkMaiusculo.checked,
+        checkMinusculo.checked,
+        checkNumero.checked,
+        checkSimbolo.checked
+    );
+
+    campoSenha.value = senhaGerada;
+    atualizarForca();
+});
